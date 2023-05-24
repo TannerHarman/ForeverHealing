@@ -1,0 +1,325 @@
+p {
+  line-height: 1.4em;
+}
+@media screen and (max-width: 343px) {
+  nav > #navbar > a > .logo > div > p {
+    font-size: 12px;
+    font-weight: bold;
+  }
+}
+
+@media screen and (max-width: 445px) {
+  nav > #navbar  {
+    grid-template-columns: 50px 1fr 50px;
+  }
+
+  nav > #navbar > #email {
+    display: none;
+  }
+}
+
+header {
+  width: 100%;
+  position: fixed;
+  z-index: 2;
+  font-size: 15px;
+}
+
+nav li {
+  list-style-type: none;
+  text-align: center;
+}
+
+nav a {
+  text-decoration: none;
+  color: black;
+}
+
+.menu-items,
+#navbar {
+  width: 90%;
+  max-width: 500px;
+  margin: auto;
+  border-radius: 7px;
+  background: gray;
+
+  display: grid;
+}
+
+.menu-items {
+  border: 1px solid gray;
+}
+
+#menu {
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  z-index: 1;
+}
+
+#menu-hide {
+  transform: 
+    translate(0, 200px)
+    scale(0);
+
+  -webkit-transition: margin-bottom ease-out 150ms,
+              -webkit-transform ease-out 150ms;
+
+  transition: margin-bottom ease-out 150ms,
+              transform ease-out 150ms,
+              -webkit-transform ease-out 150ms;
+}
+
+#menu-show {
+  grid-gap: 1px;
+  margin-bottom: 30px;
+  -webkit-transform: 
+    translate(0, 0)
+    scale(1);
+  transform: 
+    translate(0, 0)
+    scale(1);
+  overflow: hidden;
+
+  -webkit-transition: transform ease-out 150ms,
+              -webkit-transform ease-out 150ms;
+
+  transition: transform ease-out 150ms,
+              transform ease-out 150ms,
+              -webkit-transform ease-out 150ms;
+}
+
+.menu-item {
+  height: 50px;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgb(10, 10, 10)), to(rgb(2, 11, 15)));
+  background: linear-gradient(rgb(68, 68, 68), rgb(55, 58, 59));
+  display: grid;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  width: 100%;
+  color:white;
+}
+
+.menu-item:hover,
+.menu-item:focus {
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(253, 251, 251, 1)), to(rgba(235, 237, 238, 1)));
+  background: linear-gradient(rgba(253, 251, 251, 1), rgba(235, 237, 238, 1));
+  color: black;
+}
+
+#navbar {
+  display: grid;
+  grid-template-columns: 50px 50px 1fr 100px;
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 0px;
+  border-radius: 0;
+  z-index: 2;
+}
+
+#navbar > a > .logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#navbar > a > .logo > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 30px;
+  max-width: 300px;
+  white-space: nowrap;
+}
+
+.logo-img {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  background: white;
+  padding: 2px;
+  margin-right: 5px;
+}
+
+#navbar > .menu-button {
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.menu-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.menu-items > a > .menu-item > .fas {
+  margin-right: 0.5em;
+}
+
+.hover-info[data-info] {
+  position: relative;
+}
+
+.hover-info[data-info]::before {
+  content: attr(data-info);
+  display: block;
+  position: absolute;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(253, 251, 251, 1)), to(rgba(235, 237, 238, 1)));
+  background: linear-gradient(rgba(253, 251, 251, 1), rgba(235, 237, 238, 1));
+  padding: 10px 20px;
+  border: 1px solid #233c67;
+  border-radius: 5px;
+  font-size: .8em;
+  bottom: 0;
+  left: 0;
+  white-space: nowrap;
+  z-index: 2;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  -webkit-transition: bottom ease-out 150ms,
+              -webkit-transform ease-out 150ms;
+  transition: bottom ease-out 150ms,
+              -webkit-transform ease-out 150ms;
+  transition: transform ease-out 150ms,
+              bottom ease-out 150ms;
+  transition: transform ease-out 150ms,
+              bottom ease-out 150ms,
+              -webkit-transform ease-out 150ms;
+}
+
+.hover-info[data-info]:hover::before {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  bottom: 120%;
+}
+
+@media screen and (max-width: 1350px) {
+  #contact::after {
+    content: '';
+  }
+
+  .menu-item {
+    font-size: 13px;
+  }
+
+  .menu-items > a > .menu-item > .fas {
+    margin-right: 0.4em;
+    font-size: 12px;
+  }
+
+}
+
+@media screen and (max-width: 780px) {
+  .menu-item {
+    font-size: 15px;
+  }
+
+}
+
+@media screen and (max-width: 880px) {
+  header {
+    bottom: 0;
+  }
+}
+
+@media screen and (min-width: 881px) {
+  header {
+    top: 0;
+    display: grid;
+    place-items: center;
+    background: -webkit-gradient( linear, left top, left bottom, from(rgba(0, 0, 0, .75)), to(rgba(0, 0, 0, 0)));
+    background: linear-gradient( rgba(0, 0, 0, .8), rgba(0, 0, 0, .20) 75%, rgba(0, 0, 0, 0));
+    padding-bottom: 10px;
+  }
+  
+  header > nav {
+    width: 100%;
+    max-width: 1300px;
+    display: grid;
+    grid-template-columns: 2fr 1.5fr;
+    color: black;
+  }
+
+  #menu-show,
+  #menu-hide,
+  #menu {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    margin: 0px;
+  }
+
+  nav > .menu-items,
+  nav > #navbar {
+    width: 100%;
+    max-width: 100%;
+    border: none;
+    border-radius: 0px;
+    color: white;
+    overflow: visible;
+  }
+
+  nav > #navbar {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    background: transparent;
+    display: grid;
+    justify-items: start;
+    grid-template-columns: 1fr;
+  }
+
+  nav > .menu-items {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+
+    margin-bottom: 0px;
+    background: none;
+
+    display: flex;
+    justify-content: end;
+    gap: 32px;
+  }
+
+  #logo {
+    grid-column: 1/2;
+  }
+
+  .menu-item {
+    border: none;
+    height: 40px;
+    background: transparent;
+    color:  rgba(253, 251, 251, 1);
+    border-bottom: 3px solid transparent;
+  }
+
+  .menu-item:hover,
+  .menu-item:focus,
+  .current-page {
+    overflow: hidden;
+    background: none;
+    color: white;
+    border-bottom: 3px solid rgba(253, 251, 251, 1);
+  }
+  
+  #navbar > .menu-button,
+  #email,
+  #phone {
+    display: none;
+  }
+}

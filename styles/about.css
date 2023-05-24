@@ -1,0 +1,160 @@
+.heading {
+  min-height: 75vh;
+  max-height: 800px;
+  width: 100%;
+  background-image: url('../images/sitePhotos/AboutPage/HarmanFamily2022-69.jpg');
+  background-position: 60% bottom;
+  background-size: 450%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: white;
+  position: relative;
+  padding: 0px;
+    
+  display: grid;
+  grid-template-columns: auto minmax(auto, 1200px) auto;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+          
+}
+
+.heading::before {
+  content: '';
+  position: absolute;
+  top:0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.heading > div {
+  grid-column: 2/3;
+  display: grid;
+  grid-gap: 20px;
+  max-width: 500px;
+  position: sticky;
+  top: 26%;
+  justify-self: end;
+  align-self: end;
+  padding-bottom: 20px;
+  background: radial-gradient(farthest-side, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, .3));
+  -webkit-filter: drop-shadow(0 0 10px  rgba(0, 0, 0, .35));
+          filter: drop-shadow(0 0 10px  rgba(0, 0, 0, .35));
+  -webkit-box-shadow: 0 0 50px 20px rgba(0, 0, 0, .35);
+          box-shadow: 0 0 50px 20px rgba(0, 0, 0, .35);
+}
+
+.heading > div > div {
+  display: grid;
+  grid-gap: 5px;
+  font-weight: bold;
+}
+
+.heading > div > div p:nth-child(2) {
+  font-size: .6rem;
+  padding-left: 2em;
+}
+
+section {
+  display: grid;
+  padding: 20px;
+  background: linear-gradient(
+              135deg,
+              white 22%,
+              #BCC7B9 27% 29%,
+              #BCC7B9 30%,
+              #617B5A);
+  grid-gap: 30px;
+}
+
+.appointment-options {
+  background: white;
+  place-items: center;
+}
+
+.appointment-options div h3 {
+  text-align: center;
+}
+
+section .img-container {
+  -webkit-filter: drop-shadow(5px 5px 20px rgba(97, 123, 90, .5));
+          filter: drop-shadow(5px 5px 20px rgba(97, 123, 90, .5));
+  width: 75vw;
+  height: 75vw;
+  margin: auto;
+  max-width: 500px;
+  max-height: 500px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.img-container > img {
+  object-fit: contain;
+  object-position: center;
+  height: 110%;
+}
+
+section p {
+  text-indent: 1.5em;
+}
+
+.content{
+  display: grid;
+  grid-gap: 10px;
+}
+
+.button {
+  place-self: center;
+}
+
+.sign-off {
+  margin-top: 10px;
+  text-indent: 0;
+}
+
+@media screen and (min-width: 949px) {
+  .heading {
+    min-height: 80vh;
+    background-position: 100% 50%;
+    background-size: 169%;
+  }
+
+  .heading > div {
+    align-self: center;
+  }
+
+  section {
+    grid-template-columns: 1fr 350px minmax(auto, 800px) 1fr;
+    justify-items: center;
+    -webkit-box-align: center;
+       -ms-flex-align: center;
+          align-items: center;
+    padding: 50px 20px;
+  }
+
+  section .img-container {
+    grid-column: 2/3;
+    max-width: 350px;
+    max-height: 350px;
+  }
+
+  .img-container > img {
+    object-fit: cover;
+    object-position: left bottom;
+  }
+
+  .appointment-options {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+
+  .appointment-options h1 {
+    grid-column: 1/-1;
+  }
+
+  .appointment-options div {
+    max-width: 500px;
+  }
+}

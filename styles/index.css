@@ -1,0 +1,98 @@
+main {
+  min-height: 100vh;
+  width: 100%;
+  background-color: black;
+  background-image: url(/images/waterTouch.jpg);
+  background-position: center 80%;
+  background-repeat: no-repeat;
+  background-size: cover;
+    
+  display: grid;
+  justify-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+main > section {
+  height: 100%;
+  width: 100%;
+  color: white;
+
+  display: grid;
+  align-items: end;
+  justify-items: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  z-index: 1;
+}
+
+main > section > .logo {
+  width: 75%;
+  max-width: 800px;
+  display: grid;
+  grid-gap: 5px;
+  justify-items: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  text-align: center;
+  align-self: start;
+}
+
+main > section > .logo > h3 {
+  margin-bottom: 20px;
+}
+
+main > section > .logo > .logo-wrapper {
+  color: rgba(255,255,255, .93);
+  overflow: hidden;
+  display: grid;
+  justify-items: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+
+main > section > .logo > .logo-wrapper > img {
+  width: 100%;
+}
+
+main::before {
+  content: '';
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255,255,255, .6);
+  position: absolute;
+}
+
+#hero-caption {
+  display: grid;
+  grid-gap: 15px;
+  justify-items: center;
+  align-items: end;
+  padding: 3vh 5vw;
+  text-align: center;
+}
+
+#hero-caption > p {
+  color: rgba(0,0,0, .93);
+  max-width: 620px;
+  font-size: 20px;
+}
+
+@media screen and (max-height: 675px) {
+  main > section {
+    margin-bottom: 50px;
+  }
+
+  #hero-caption {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 880px) {
+  #hero-caption {
+    padding: calc(3vh + 50px) 5vw;
+  }
+}

@@ -1,0 +1,214 @@
+main {
+  width: 100%;
+  min-height: calc(95vh - 50px);
+
+  display: grid;
+  justify-items: center;
+  align-items: center;
+}
+
+main .container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  display: grid;
+  grid-template-rows: min(25vh, 300px) min(32vh, 500px) auto auto auto;
+  grid-template-columns: 2.5vw 1fr 2.5vw;
+  row-gap: 75px;
+  column-gap: 50px;
+  place-items: center;
+}
+
+main .container .heroImg {
+  width: 100%;
+  height: 100%;
+  background-image: url('../images/sitePhotos/ServicePage/Services/massageRoom.jpg');
+  background-position: center 80%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  transform:scaleX(-1);
+  z-index: -1;
+  position: relative;
+
+  grid-column: 1/-1;
+  grid-row: 1/3;
+}
+
+.heroImg::before {
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0,0,0, .20);
+}
+
+.container .services {
+  width: clamp(50%,100%, 1650px);
+  color: white;
+  grid-row: 2/4;
+  grid-column: 2/-2;
+
+  display: grid;
+  gap: 25px;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.container .services .service {
+  justify-self: center;
+
+  color: black;
+  width: clamp(300px, 100%, 500px);
+  background-color: white;
+  padding: 10px;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 3px 3px 15px 0 rgba(0,0,0, .20);
+  z-index: 0;
+  height: 575px;
+
+  display: grid;
+  grid-template-rows: 45% auto 15%;
+}
+
+.title {
+  grid-column: 1/-1;
+}
+
+.service > h3,
+.service img {
+  grid-column: 1/-1;
+  grid-row: 1/2;
+  height: 100%;
+  width: 110%;
+  position: relative;
+
+  display: grid;
+  align-content: end;
+}
+
+.service > h3,
+.service > p {
+  padding: 8px;
+}
+
+.service > h3::before {
+  content: '';
+  position: absolute;
+  background: linear-gradient(rgba(255, 255, 255, 0) 70%, rgba(255, 255, 255, .75));
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.service h3 span {
+  font-size: 15px;
+}
+
+.service img {
+  width: 110%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  border-radius: 5px 0 0 0;
+}
+
+.service > p {
+  margin-top: 10px;
+}
+
+.service .pricing {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.service .pricing span {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+}
+
+.service .pricing .seperator {
+  width: 1px;
+  height: 50%;
+  border-radius: 50%;
+  background-color: black;
+}
+
+.container .addOns {
+  width: min(100%, 1650px) ;
+  grid-row: 4/5;
+  grid-column: 2/-2;
+
+  display: flex;;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 25px;
+}
+
+.addOns .addOn {
+  width: 300px;
+  height: 300px;
+  margin: 0px 50px 50px 50px;
+  position: relative;
+}
+
+.addOns .addOn div {
+  color: white;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  overflow: hidden;
+  text-align: center;
+}
+
+.addOns .addOn div::before {
+  content: '';
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0, .50);
+  position: absolute;
+  z-index: -1;
+}
+
+.addOns .addOn h2 {
+  color: white;
+  position: absolute;
+  bottom: 10px;
+  right: 0px;
+  background-color: #617B5A;
+  padding: 8px 25px;
+  border-radius: 25px;
+}
+
+.addOns .addOn h2::before {
+  content: '+ $';
+}
+
+.addOns .addOn img {
+  position: absolute;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+}
+
+.addOns .title {
+  flex-basis: 100%;
+}
+
+@media screen and (max-width: 1500px) {
+  main .container .services {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    width: min(90%, 1000px)
+  }
+}
