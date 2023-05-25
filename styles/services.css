@@ -16,7 +16,7 @@ main .container {
   grid-template-rows: min(25vh, 300px) min(32vh, 500px) auto auto auto;
   grid-template-columns: 2.5vw 1fr 2.5vw;
   row-gap: 75px;
-  column-gap: 50px;
+  column-gap: min(50px, 3vw);
   place-items: center;
 }
 
@@ -59,7 +59,7 @@ main .container .heroImg {
   justify-self: center;
 
   color: black;
-  width: clamp(300px, 100%, 500px);
+  /* width: clamp(300px, 100%, 500px); */
   background-color: white;
   padding: 10px;
   border-radius: 5px;
@@ -210,5 +210,10 @@ main .container .heroImg {
   main .container .services {
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     width: min(90%, 1000px)
+  }
+
+  main .container {
+    column-gap: 0;
+    grid-template-columns: 1fr;
   }
 }
